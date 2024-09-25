@@ -1,1 +1,1 @@
-# Embodied-RAG-web
+# OGN_selfsup_webpage

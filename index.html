@@ -226,7 +226,7 @@
        
       <br><hr>
 
-      <center><h1>Why Situated Instructions?</h1></center>
+      <center><h1>What is needed to construct non-parametric memory for embodied agent?</h1></center>
 <!--       <center><h2>Project Video</h2></center> -->
       <table align=center width=300px>
       <tr><td align=center width=300px>
@@ -238,33 +238,44 @@
       <br>
 
       <div style="width:800px; margin:0 auto; text-align:justify"> 
-        Humans naturally engage in communication that is ambiguous and contextually situated, providing just enough information as necessary. For instance, the instruction "Can you bring me a cup?"" can vary in meaning depending on the context. If spoken while the speaker is donning rubber gloves by the kitchen sink, it likely refers to a dirty cup located on the living room table. Conversely, the same request made in front of the bathroom sink typically implies a need for a clean cup. While it's possible to seek clarification, humans generally interpret and respond to such requests accurately without additional information. This capability demonstrates how humans skillfully use environmental and actional cues to interpret ambiguous language, crafting meanings that are intricately nuanced and context-specific.
+        There is no limit to how much a robot might explore and learn, but all of that knowledge needs to be searchable and actionable. Within language research, retrieval augmented generation (RAG) has become the workhouse of large-scale non-parameteric knowledge, however existing techniques do not directly transfer to the embodied domain, which is multimodal, data is highly correlated, and perception requires abstraction.
 
-        However, current instruction-following tasks prioritize accurate low-level instruction interpretation (e.g. VLN) or use commonsense to achieve underspecified goals like object navigation. We present Situated Instruction Following (SIF), which generalizes Embodied Instruction Following to situated language - the natural language spoken by humans.
+        To address these challenges, we introduce Embodied-RAG, a framework that enhances the foundational model of an embodied agent with a nonparametric memory system capable of autonomously constructing hierarchical knowledge for both navigation and language generation. Embodied-RAG handles a full range of spatial and semantic resolutions across diverse environments and query types, whether for a specific object or a holistic description of ambiance. 
+        At its core, Embodied-RAG's memory is structured as a semantic forest, storing language descriptions at varying levels of detail. This hierarchical organization allows the system to efficiently generate context-sensitive outputs across different robotic platforms. We demonstrate that Embodied-RAG effectively bridges RAG to the robotics domain, successfully handling over 200 explanation and navigation queries across 19 environments, highlighting its promise for general-purpose nonparametric system for embodied agents.
 
       <br><hr>
 
       <center><h1>Task</h1></center>
 
-      <table align=center width=300px>
-      <tr><td align=center width=300px>
-          <!-- <iframe width="768" height="432" src="https://www.youtube.com/embed/tlyz68j_jvE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <center><img src = "./resources/tests_unseen_33.gif" height="400px"></img></a><br></center> -->
-          <center><img src = "./resources/sif_fig1_high_res.png" height="400px"></img></a><br></center>
-          <!-- <iframe src="./resources/sif_fig1.pdf" height="400"></iframe> -->
+      <table align="center" width="300px">
+      <tr><td align="center" width="300px">
+          <center><img src="./resources/sif_fig1_high_res.png" height="400px"></center>
       </td></tr>
       </table>
-
-      The tasks in SIF consist of two phases: an exploration phase (phase 1) and a task phase (phase 2). PnP represents a conventional static Pick-and-Place task used for comparison, wherein the environment remains unchanged after the exploration phase. S_hum and S_obj introduce two novel types of situated instruction following tasks. In these tasks, the objets and human subjects move during the task phase. Nuanced communication regarding these movements is provided, necessitating reasoning about ambiguous, temporally evolving, and dynamic human intent.
-
+      
+      <!-- Replacing white text with your provided content -->
+      <div style="text-align: justify;">
+          <p>The Embodied-RAG benchmark contains queries from the cross-product of <strong>{explicit, implicit, global}</strong> questions with potential <strong>{navigational action, language}</strong> generation outputs.</p>
+      
+          <h3>A task consists of:</h3>
+          <ul>
+              <li><strong>Query</strong>: The content can be explicit (e.g., a particular object instance), implicit (e.g., adequacy, instructions requiring pragmatic understanding), or global. The request may pertain to a specific location or overall ambiance.</li>
+              <li><strong>Experience</strong>: The experience is a sequence of egocentric visual perception and odometry, occurring in indoor, outdoor, or mixed environments.</li>
+              <li><strong>Output</strong>: The expected output may include both navigation actions with language descriptions (Fig. 1 top) or language explanations (Fig. 1 bottom).</li>
+          </ul>
+      
+          <p>Example tasks are shown in Fig. 1, with instances of explicit, implicit, and global queries. Spatially, the queries range from specific regions small enough to contain certain objects to global regions encompassing the entire scene. Linguistically, global queries are closer to retrieval-augmented generation tasks, while explicit/implicit ones are more retrieval-focused. Explicit and implicit queries are navigational tasks that expect navigation actions and text descriptions of the retrieved location. Global queries, on the other hand, are explanation tasks requiring text generation at a more holistic level. There are no global navigation tasks, as they pertain to larger areas, sometimes the entire environment.</p>
+      
+          <p>Queries were collected by four human annotators using teleoperated robots across two real outdoor/mixed environments, three real indoor environments, and fourteen simulated environments. These environments include diverse settings such as a residential neighborhood, a deserted theme park, and a college campus. The environments convey different atmospheres through various activities—people lined up, chatting, or jackets left in office spaces. Navigation was performed by quadrupeds, drones, and locobots.</p>
+      </div>
+      
       <br><hr>
 
       <center><h1>Method</h1></center>
 
       <table align=center width=300px>
       <tr><td align=center width=300px>
-          <!-- <iframe width="768" height="432" src="https://www.youtube.com/embed/tlyz68j_jvE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <center><img src = "./resources/tests_unseen_33.gif" height="400px"></img></a><br></center> -->
+
           <center><img src = "./resources/sif_method.png" height="400px"></img></a><br></center>
       </td></tr>
       </table>
@@ -277,8 +288,6 @@
 
       <table align=center width=300px>
       <tr><td align=center width=300px>
-          <!-- <iframe width="768" height="432" src="https://www.youtube.com/embed/tlyz68j_jvE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <center><img src = "./resources/tests_unseen_33.gif" height="400px"></img></a><br></center> -->
           <center><img src = "./resources/sif_results.png" height="250px"></img></a><br></center>
       </td></tr>
       </table>

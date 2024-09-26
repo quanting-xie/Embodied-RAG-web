@@ -303,8 +303,13 @@
       </td></tr>
       </table>
 
-      We show SPL performance of Reasoner and Prompter on SIF tasks. This table shows that S_obj and S_hum tasks are challenging to both models. In a more detailed analysis, we find that both Reasoner and Prompter struggle in navigating through ambiguity in instructions. 
 
+      <h3>Quantitative Results</h3>
+      <p>Table <strong>Result Table</strong> presents the performance of Embodied-RAG compared to RAG and Semantic Match across explicit, implicit, and global retrieval tasks. Embodied-RAG consistently outperforms the baselines across both small and large environments. Explicit queries show strong performance across all methods, with Embodied-RAG slightly improving over RAG. For implicit queries, Embodied-RAG maintains high success rates, while RAG and Semantic Match experience significant drops, particularly in larger environments. In global queries, Embodied-RAG achieves the highest scores on the Likert scale, while Semantic Match is inapplicable due to its inability to summarize or reason globally.</p>
+      
+      <h3>Qualitative Results</h3>
+      <p>In qualitative comparisons, Embodied-RAG demonstrates superior reasoning capabilities, particularly for implicit and global queries (see <strong>Result Figure</strong>). For the query <em>“Find where I can buy some drinks?”</em>, Embodied-RAG accurately identifies food service areas, while the baselines retrieve less appropriate results like refrigerators or water fountains. Similarly, for the query <em>“Find somewhere to take a nap outside”</em>, Embodied-RAG identifies public parks, while RAG and Semantic Match incorrectly suggest private backyards, lacking global context.</p>
+      
       <br><hr>
 
 

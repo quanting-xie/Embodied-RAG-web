@@ -378,6 +378,71 @@
       </table>
 
 
+      <center><h1>Example Queries and Prompt</h1></center>
+
+      <h2>Embodied Generation Task Examples</h2>
+      
+      <h3>Queries</h3>
+      
+      <h4>Explicit Retrieval Task</h4>
+      <pre>
+      1. Find me a water fountain.
+      2. Find me a sofa.
+      3. Find me a fire hydrant.
+      </pre>
+      
+      <h4>Implicit Retrieval Task</h4>
+      <pre>
+      1. I am dehydrated, find me somewhere.
+      2. Find me a quiet place to read books.
+      3. Find me a place suitable for having a group discussion.
+      4. Find me a place suitable for camping.
+      5. Find me somewhere I can play with my children but not on the grass.
+      </pre>
+      
+      <h4>Global Retrieval Task</h4>
+      <pre>
+      1. Can you describe the overall atmosphere of this environment?
+      2. How are the safety features in this environment?
+      3. Is this environment prepared for a fire hazard?
+      4. Can you describe the overall plant trends in this environment?
+      5. Can you describe different areas in this environment?
+      </pre>
+      
+      <h2>Experiences</h2>
+      <p>This section provides a third-person view on collecting different experiences in both real and simulated environments across various platforms.</p>
+      <img src="images/environments.png" alt="Three platforms used to collect experiences in nineteen different environments" style="width:90%;"/>
+      
+      <h2>GEM-RAG Prompts</h2>
+      
+      <h3>Memory</h3>
+      
+      <h4>Caption Prompt</h4>
+      <blockquote style="border-left: 5px solid #ccc; padding-left: 10px;">
+      You are a robot equipped with three front cameras. Given three images, describe the objects you see in a single list, and then describe their spatial relationships.
+      </blockquote>
+      
+      <h4>Abstraction Prompt</h4>
+      <blockquote style="border-left: 5px solid #ccc; padding-left: 10px;">
+      Given the environment descriptions {environment descriptions}, can you abstract them into a more general form? Try to infer the environment's intrinsic properties.
+      </blockquote>
+      
+      <h3>Retrieval</h3>
+      
+      <h4>Selection Prompt</h4>
+      <blockquote style="border-left: 5px solid #ccc; padding-left: 10px;">
+      Given the environment descriptions: {environment descriptions}, select the best one to satisfy the query: {query} and show your reasoning. Structure your answer like this: Reasoning: &lt;reasoning&gt; , Node: &lt;node_1&gt;.
+      </blockquote>
+      
+      <h3>Generation</h3>
+      
+      <h4>Global Answer Generation</h4>
+      <blockquote style="border-left: 5px solid #ccc; padding-left: 10px;">
+      Utilize all available environment descriptions: {environment descriptions}, to provide a comprehensive answer to the question: {query}.
+      </blockquote>
+      
+      <hr>
+
       <!-- <center><h1>Video Presentation</h1></center>
 
       <table align=center width=1000px>

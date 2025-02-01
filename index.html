@@ -248,7 +248,7 @@
       <tr><td align=center width=300px>
           <!-- <iframe width="768" height="432" src="https://www.youtube.com/embed/tlyz68j_jvE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <center><img src = "./resources/tests_unseen_33.gif" height="400px"></img></a><br></center> -->
-          <center><img src = "./resources/fig1.png" height="500px"></img></a><br></center>
+          <center><img src = "./resources/Figure1_new.png" height="500px"></img></a><br></center>
       </td></tr>
       </table>
       <br>
@@ -258,32 +258,6 @@
         To address these challenges, we introduce Embodied-RAG, a framework that enhances the foundational model of an embodied agent with a non-parametric memory system capable of autonomously constructing hierarchical knowledge for both navigation and language generation. Embodied-RAG handles a full range of spatial and semantic resolutions across diverse environments and query types, whether for a specific object or a holistic description of ambiance. At its core, Embodied-RAG's memory is structured as a semantic forest, storing language descriptions at varying levels of detail. This hierarchical organization allows the system to efficiently generate context-sensitive outputs across different robotic platforms. We demonstrate that Embodied-RAG effectively bridges RAG to the robotics domain, successfully handling over 250 explanation and navigation queries across kilometer-level environments, highlighting its promise as a general-purpose non-parametric system for embodied agents.
       <br><hr>
 
-      <center><h1>Task</h1></center>
-
-      <table align="center" width="300px">
-      <tr><td align="center" width="300px">
-          <center><img src="./resources/Task_figure.png" height="300px"></center>
-          <center><img src="./resources/Task Table.png" height="300px"></center>
-
-      </td></tr>
-      </table>
-      
-      <!-- Replacing white text with your provided content -->
-      <div style="text-align: justify;">
-          <p>The Embodied-RAG benchmark contains queries from the cross-product of <strong>{explicit, implicit, global}</strong> questions with potential <strong>{navigational action, language}</strong> generation outputs.</p>
-      
-          <h3>A task consists of:</h3>
-          <ul>
-              <li><strong>Query</strong>: The content can be explicit (e.g., a particular object instance), implicit (e.g., adequacy, instructions requiring pragmatic understanding), or global. The request may pertain to a specific location or overall ambiance.</li>
-              <li><strong>Experience</strong>: The experience is a sequence of egocentric visual perception and odometry, occurring in indoor, outdoor, or mixed environments.</li>
-              <li><strong>Output</strong>: The expected output may include both navigation actions with language descriptions (Fig. 1 top) or language explanations (Fig. 1 bottom).</li>
-          </ul>
-      
-          <p>Example tasks are shown in Fig. 1, with instances of explicit, implicit, and global queries. Spatially, the queries range from specific regions small enough to contain certain objects to global regions encompassing the entire scene. Linguistically, global queries are closer to retrieval-augmented generation tasks, while explicit/implicit ones are more retrieval-focused. Explicit and implicit queries are navigational tasks that expect navigation actions and text descriptions of the retrieved location. Global queries, on the other hand, are explanation tasks requiring text generation at a more holistic level. There are no global navigation tasks, as they pertain to larger areas, sometimes the entire environment.</p>
-
-      </div>
-      
-      <br><hr>
 
       <center><h1>Method</h1></center>
 
@@ -322,7 +296,7 @@
             <!-- Result Table with caption -->
             <figure>
               <center>
-                <img src="./resources/Result_speed.png" height="300px" alt="Result Table"></img>
+                <img src="./resources/Result_speed.png" height="300px" alt="Result Table"></img>  
                 <figcaption><strong>Result Table</strong>: Comparison of memory building speed compared against baselines.</figcaption>
               </center>
             </figure>

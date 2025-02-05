@@ -285,21 +285,21 @@
             <figure>
               <center>
                 <img src="./resources/result_quantitative.png" height="300px" alt="Result Table"></img>
-                <figcaption><strong>Result Table</strong>: Comparison of methods across different tasks.</figcaption>
+                <figcaption><strong>Result Figure</strong>: Comparison of methods across different tasks.</figcaption>
               </center>
             </figure>
             <!-- Result Table with caption -->
             <figure>
               <center>
                 <img src="./resources/Result_speed.png" height="300px" alt="Result Table"></img>  
-                <figcaption><strong>Result Table</strong>: Comparison of memory building speed compared against baselines.</figcaption>
+                <figcaption><strong>Result Speed</strong>: Comparison of memory building speed compared against baselines.</figcaption>
               </center>
             </figure>
             <!-- Result Figure with caption -->
             <figure>
               <center>
                 <img src="./resources/result_global.png" height="300px" alt="Result Figure"></img>
-                <figcaption><strong>Result Figure</strong>: Example of reasoning output for global queries, we can see that Embodied-RAG is able to reason about the overall environment and provide a comprehensive answer.</figcaption>
+                <figcaption><strong>Result Global</strong>: Example of reasoning output for global queries, we can see that Embodied-RAG is able to reason about the overall environment and provide a comprehensive answer.</figcaption>
               </center>
             </figure>
       
@@ -308,10 +308,12 @@
       </table>
       
       <h3>Quantitative Results</h3>
-      <p>Table <strong>Result Table</strong> presents the performance of Embodied-RAG compared to RAG and Semantic Match across explicit, implicit, and global retrieval tasks. Embodied-RAG consistently outperforms the baselines across both small and large environments. Explicit queries show strong performance across all methods, with Embodied-RAG slightly improving over RAG. For implicit queries, Embodied-RAG maintains high success rates, while RAG and Semantic Match experience significant drops, particularly in larger environments. In global queries, Embodied-RAG achieves the highest scores on the Likert scale, while Semantic Match is inapplicable due to its inability to summarize or reason globally.</p>
+      <p>As shown in the <strong>Result Figure</strong>, we evaluate Embodied-RAG's performance against several baselines (Naive-RAG, GraphRAG, and LightRAG) across different query types. The baselines show notably poor performance for explicit and implicit queries, primarily due to their limitations in chunking multimodal embodied data into text, which often leads to retrieval failures. However, for global queries, LightRAG and GraphRAG demonstrate better performance than Naive-RAG, showcasing the advantages of their graph structures in generating holistic environmental responses.</p>
+      
+      <p>Embodied-RAG consistently outperforms all baselines, particularly in explicit and implicit queries across all input types. For global queries, especially under spatial constraint conditions, Embodied-RAG demonstrates superior performance thanks to its flexible hybrid re-ranking approach during retrieval. Furthermore, when provided with additional sensor data, Embodied-RAG's performance shows significant improvement, while baseline performance remains unchanged, highlighting the system's effective integration of multimodal information for complex query understanding and response generation.</p>
       
       <h3>Qualitative Results</h3>
-      <p>In qualitative comparisons, Embodied-RAG demonstrates superior reasoning capabilities, particularly for implicit and global queries (see <strong>Result Figure</strong>). For the query <em>"Find where I can buy some drinks?"</em>, Embodied-RAG accurately identifies food service areas, while the baselines retrieve less appropriate results like refrigerators or water fountains. Similarly, for the query <em>"Find somewhere to take a nap outside"</em>, Embodied-RAG identifies public parks, while RAG and Semantic Match incorrectly suggest private backyards, lacking global context.</p>
+      <p>In qualitative comparisons, Embodied-RAG demonstrates superior reasoning capabilities, particularly for global queries (see <strong>Result Global</strong>). For the query <em>"Describe the environment holistically"</em>, Embodied-RAG identifies the clustered regions and provides a comprehensive description of the environment, while the baselines retrieve less appropriate results like segments of the environment.</p>
       
       <br><hr>
 
